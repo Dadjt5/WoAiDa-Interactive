@@ -1,8 +1,9 @@
 export type Language = "es" | "en";
 
-export const translations = {
+export const translations = {  
   es: {
-    name:"Nombre",
+    music: "Música",
+    name: "Nombre",
     objetive: "Objetivo",
     rules: "Reglas",
     voidLord: "Señor del vacio",
@@ -25,7 +26,15 @@ export const translations = {
     hallNoPlayer: "No hay jugadores registrados aún",
     TTRInfoTitle: "Sobre el juego",
     TTR_description: "Tic Tac Random le da la vuelta al clásico tres en raya: los eventos aleatorios asociados al dado y las traits hacen que cada partida diferente.",
-    TTR_rules: "Lo mas probable en una partida de tres en raya es acabar en empate, por eso en este juego hemos añadido el dado, después de que un jugador coloque una ficha debe tirar el dado y con ello desencadenar uno de los 6 resultados posibles: \nSi sacas un 1 deberás elegir una ficha del rival para eliminarla\nSi sacas un 2 se volverá a tirar el dado\nSi sacas un 3 deberás elegir una ficha propia para eliminarla\nSi sacas un 4 no sucederá nada\nSi sacas un 5 podrás poner una ficha más y tirar de nuevo el dado\nSi sacas un 6 perderás la ficha que acabas de poner",
+    TTR_rules_intro: "Lo más probable en una partida de tres en raya es acabar en empate, por eso en este juego hemos añadido el dado. Después de que un jugador coloque una ficha, debe tirarlo y desencadenar uno de los 6 resultados posibles:",
+    TTR_rules: [
+      { dado: 1, resultado: "Elige una ficha del rival para eliminarla" },
+      { dado: 2, resultado: "Se vuelve a tirar el dado" },
+      { dado: 3, resultado: "Elige una ficha propia para eliminarla" },
+      { dado: 4, resultado: "No sucede nada" },
+      { dado: 5, resultado: "Puedes poner una ficha más y tirar de nuevo el dado" },
+      { dado: 6, resultado: "Pierdes la ficha que acabas de poner" },
+    ],
     TTR_primera_victoria: "Primera victoria",
     TTR_victoria_estelar: "Triunfo estelar",
     TTR_juego_ninos: "Juego de niños",
@@ -38,9 +47,16 @@ export const translations = {
     TTR_afk_expl: "Pierde una partida contra la máquina sin hacer ningún movimiento",
     TTR_en_serio_expl: "Pierde una partida contra la máquina con el menor nivel de dificultad posible",
     TTR_void_lord: "El objetivo final del juego es vencer al jefe final, el Señor del vacio, un despiadado enemigo que cuenta con poderosas habilidades, algunas de las cuales podrás robarle si consigues vencerle. Para poder retarle primero debes superar los 6 logros del juego.",
+    TTR_credit_title: "Creado por Game Break",
+    development: "Desarrollo",
+    designArt: "Diseño y arte",
+    script: "Guión",
+    translations: "Traducciones"
+
   },
   en: {
-    name:"Name",
+    music: "Music",
+    name: "Name",
     objetive: "Objetive",
     voidLord: "Lord of the void",
     rules: "Rules",
@@ -63,7 +79,15 @@ export const translations = {
     hallNoPlayer: "No players registered yet",
     TTRInfoTitle: "About the game",
     TTR_description: "Tic Tac Random puts a twist on classic Tic-Tac-Toe: random events linked to the die and special traits make every game different.",
-    TTR_rules: "A game of Tic-Tac-Toe most likely ends in a draw, which is why we have added a die to this game; after placing a piece, a player must roll the die, triggering one of six possible outcomes: \nIf you roll a 1, you must choose one of your opponent's pieces to remove\nIf you roll a 2, you roll the die again\nIf you roll a 3, you must choose one of your own pieces to remove\nIf you roll a 4, nothing happens\nIf you roll a 5, you may place an additional piece and roll the die again\nIf you roll a 6, you lose the piece you just placed",
+    TTR_rules_intro: "The most likely outcome in a game of tic-tac-toe is a draw, which is why we've added a die to this game. After a player places a piece, they must roll the die and trigger one of 6 possible outcomes:",
+    TTR_rules: [
+      { dado: 1, resultado: "Choose one of your opponent's pieces to remove" },
+      { dado: 2, resultado: "Roll the die again" },
+      { dado: 3, resultado: "Choose one of your own pieces to remove" },
+      { dado: 4, resultado: "Nothing happens" },
+      { dado: 5, resultado: "You can place an extra piece and roll the die again" },
+      { dado: 6, resultado: "You lose the piece you just placed" },
+    ],
     TTR_primera_victoria: "First victory",
     TTR_victoria_estelar: "Stellar triumph",
     TTR_juego_ninos: "Child's play",
@@ -76,6 +100,11 @@ export const translations = {
     TTR_afk_expl: "Lose a game against the AI without making a single move",
     TTR_en_serio_expl: "Lose a game against the AI on the lowest difficulty level",
     TTR_void_lord: "The game's ultimate goal is to defeat the final boss, the Void Lord—a ruthless enemy possessing powerful abilities, some of which you can steal if you manage to defeat him. To challenge him, you must first complete the game's six achievements.",
+    TTR_credit_title: "Created by Game Break",
+    development: "Development",
+    designArt: "Art and design",
+    script: "Script",
+    translations: "Translations"
   },
 } satisfies Record<Language, Record<string, string>>;
 

@@ -7,96 +7,52 @@ import icVictoriaInapelable from "../../assets/TTR/ic_victoria_inapelable.svg";
 import icAFK from "../../assets/TTR/ic_afk.svg";
 import icEnSerio from "../../assets/TTR/ic_en_serio.svg";
 
+const achievements = [
+  { icon: icPrimeraVictoria, titleKey: "TTR_primera_victoria", explKey: "TTR_primera_victoria_expl" },
+  { icon: icVictoriaEstelar, titleKey: "TTR_victoria_estelar", explKey: "TTR_victoria_estelar_expl" },
+  { icon: icJuegoNiños, titleKey: "TTR_juego_ninos", explKey: "TTR_juego_ninos_expl" },
+  { icon: icVictoriaInapelable, titleKey: "TTR_victoria_inapelable", explKey: "TTR_victoria_inapelable_expl" },
+  { icon: icAFK, titleKey: null, explKey: "TTR_afk_expl" },
+  { icon: icEnSerio, titleKey: "TTR_en_serio", explKey: "TTR_en_serio_expl" },
+];
+
 export default function Objetivo() {
   const { t } = useLanguage();
 
   return (
-    <div className="text-center">
+    <div className="container py-4">
       {/* Objetivo */}
-      <section className="mb-5">
-        <h2 className="mb-4">{t.voidLord}</h2>
-        <div className="mx-auto text-start" style={{ maxWidth: 650 }}>
-          {t.TTR_void_lord}
+      <section className="text-center mb-5">
+        <h2 className="fw-bold mb-4">{t.voidLord}</h2>
+        <div className="row justify-content-center">
+          <p className="col-12 col-lg-9 col-xl-8">
+            {t.TTR_void_lord}
+          </p>
         </div>
       </section>
 
       {/* Logros */}
-      <section>
-        <h2 className="mb-4">{t.achivements}</h2>
+      <section className="text-center">
+        <h2 className="fw-bold mb-4">{t.achivements}</h2>
         <div className="row g-4 justify-content-center">
-
-          <div className="col-6 col-md-4 col-lg-3">
-            <div className={`${styles.achievementCard} p-3 rounded-4 shadow-sm h-100`}>
-              <img
-                src={icPrimeraVictoria}
-                alt={t.TTR_primera_victoria}
-                className={`${styles.achievementIcon} mx-auto mb-2`}
-              />
-              <h6 className="mb-1">{t.TTR_primera_victoria}</h6>
-              <p className="mb-0 small text-muted">{t.TTR_primera_victoria_expl}</p>
-            </div>
-          </div>
-
-          <div className="col-6 col-md-4 col-lg-3">
-            <div className={`${styles.achievementCard} p-3 rounded-4 shadow-sm h-100`}>
-              <img
-                src={icVictoriaEstelar}
-                alt={t.TTR_victoria_estelar}
-                className={`${styles.achievementIcon} mx-auto mb-2`}
-              />
-              <h6 className="mb-1">{t.TTR_victoria_estelar}</h6>
-              <p className="mb-0 small text-muted">{t.TTR_victoria_estelar_expl}</p>
-            </div>
-          </div>
-
-          <div className="col-6 col-md-4 col-lg-3">
-            <div className={`${styles.achievementCard} p-3 rounded-4 shadow-sm h-100`}>
-              <img
-                src={icJuegoNiños}
-                alt={t.TTR_juego_ninos}
-                className={`${styles.achievementIcon} mx-auto mb-2`}
-              />
-              <h6 className="mb-1">{t.TTR_juego_ninos}</h6>
-              <p className="mb-0 small text-muted">{t.TTR_juego_ninos_expl}</p>
-            </div>
-          </div>
-
-          <div className="col-6 col-md-4 col-lg-3">
-            <div className={`${styles.achievementCard} p-3 rounded-4 shadow-sm h-100`}>
-              <img
-                src={icVictoriaInapelable}
-                alt={t.TTR_victoria_inapelable}
-                className={`${styles.achievementIcon} mx-auto mb-2`}
-              />
-              <h6 className="mb-1">{t.TTR_victoria_inapelable}</h6>
-              <p className="mb-0 small text-muted">{t.TTR_victoria_inapelable_expl}</p>
-            </div>
-          </div>
-
-          <div className="col-6 col-md-4 col-lg-3">
-            <div className={`${styles.achievementCard} p-3 rounded-4 shadow-sm h-100`}>
-              <img
-                src={icAFK}
-                alt="AFK"
-                className={`${styles.achievementIcon} mx-auto mb-2`}
-              />
-              <h6 className="mb-1">AFK</h6>
-              <p className="mb-0 small text-muted">{t.TTR_afk_expl}</p>
-            </div>
-          </div>
-
-          <div className="col-6 col-md-4 col-lg-3">
-            <div className={`${styles.achievementCard} p-3 rounded-4 shadow-sm h-100`}>
-              <img
-                src={icEnSerio}
-                alt={t.TTR_en_serio}
-                className={`${styles.achievementIcon} mx-auto mb-2`}
-              />
-              <h6 className="mb-1">{t.TTR_en_serio}</h6>
-              <p className="mb-0 small text-muted">{t.TTR_en_serio_expl}</p>
-            </div>
-          </div>
-
+          {achievements.map(({ icon, titleKey, explKey }, i) => {
+            const title = titleKey ? t[titleKey] : "AFK";
+            return (
+              <div key={i} className="col-6 col-md-4 col-lg-3">
+                <div
+                  className={`${styles.achievementCard} p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center`}
+                >
+                  <img
+                    src={icon}
+                    alt={title}
+                    className={`${styles.achievementIcon} mb-3`}
+                  />
+                  <h6 className="mb-1 fw-semibold">{title}</h6>
+                  <p className="mb-0 small text-muted">{t[explKey]}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>
