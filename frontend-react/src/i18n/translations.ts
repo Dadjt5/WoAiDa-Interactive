@@ -1,5 +1,57 @@
 export type Language = "es" | "en";
 
+interface DiceRule {
+  dado: number;
+  resultado: string;
+}
+
+export interface Translation {
+  music: string;
+  name: string;
+  objetive: string;
+  rules: string;
+  voidLord: string;
+  achivements: string;
+  home: string;
+  contact: string;
+  hallOfFame: string;
+  credits: string;
+  info: string;
+  homeTitle: string;
+  homeExpl: string;
+  homeThanks: string;
+  homeGames: string;
+  information: string;
+  contactDoubt: string;
+  writeUs: string;
+  hallTitle: string;
+  hallDate: string;
+  hallLoad: string;
+  hallNoPlayer: string;
+  TTRInfoTitle: string;
+  TTR_description: string;
+  TTR_rules_intro: string;
+  TTR_rules: DiceRule[];
+  TTR_primera_victoria: string;
+  TTR_victoria_estelar: string;
+  TTR_juego_ninos: string;
+  TTR_victoria_inapelable: string;
+  TTR_en_serio: string;
+  TTR_primera_victoria_expl: string;
+  TTR_victoria_estelar_expl: string;
+  TTR_juego_ninos_expl: string;
+  TTR_victoria_inapelable_expl: string;
+  TTR_afk_expl: string;
+  TTR_en_serio_expl: string;
+  TTR_void_lord: string;
+  TTR_credit_title: string;
+  development: string;
+  designArt: string;
+  script: string;
+  translations: string;
+  testers: string;
+}
+
 export const translations = {  
   es: {
     music: "Música",
@@ -51,7 +103,8 @@ export const translations = {
     development: "Desarrollo",
     designArt: "Diseño y arte",
     script: "Guión",
-    translations: "Traducciones"
+    translations: "Traducciones",
+    testers:"Testers",
 
   },
   en: {
@@ -104,8 +157,9 @@ export const translations = {
     development: "Development",
     designArt: "Art and design",
     script: "Script",
-    translations: "Translations"
+    translations: "Translations",
+    testers:"Testers",
   },
-} satisfies Record<Language, Record<string, string>>;
+} satisfies Record<Language, Translation>;
 
 export type TranslationKey = keyof typeof translations["es"];

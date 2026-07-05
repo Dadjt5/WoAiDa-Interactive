@@ -7,7 +7,27 @@ import icVictoriaInapelable from "../../assets/TTR/ic_victoria_inapelable.svg";
 import icAFK from "../../assets/TTR/ic_afk.svg";
 import icEnSerio from "../../assets/TTR/ic_en_serio.svg";
 
-const achievements = [
+type AchievementTitleKey =
+  | "TTR_primera_victoria"
+  | "TTR_victoria_estelar"
+  | "TTR_juego_ninos"
+  | "TTR_victoria_inapelable"
+  | "TTR_en_serio";
+
+type AchievementExplKey =
+  | "TTR_primera_victoria_expl"
+  | "TTR_victoria_estelar_expl"
+  | "TTR_juego_ninos_expl"
+  | "TTR_victoria_inapelable_expl"
+  | "TTR_afk_expl"
+  | "TTR_en_serio_expl";
+
+interface Achievement {
+  icon: string;
+  titleKey: AchievementTitleKey | null;
+  explKey: AchievementExplKey;
+}
+const achievements: Achievement[] = [
   { icon: icPrimeraVictoria, titleKey: "TTR_primera_victoria", explKey: "TTR_primera_victoria_expl" },
   { icon: icVictoriaEstelar, titleKey: "TTR_victoria_estelar", explKey: "TTR_victoria_estelar_expl" },
   { icon: icJuegoNiños, titleKey: "TTR_juego_ninos", explKey: "TTR_juego_ninos_expl" },
@@ -36,7 +56,7 @@ export default function Objetivo() {
         <h2 className="fw-bold mb-4">{t.achivements}</h2>
         <div className="row g-4 justify-content-center">
           {achievements.map(({ icon, titleKey, explKey }, i) => {
-            const title = titleKey ? t[titleKey] : "AFK";
+            const title = titleKey ? (t[titleKey] as string) : "AFK";
             return (
               <div key={i} className="col-6 col-md-4 col-lg-3">
                 <div

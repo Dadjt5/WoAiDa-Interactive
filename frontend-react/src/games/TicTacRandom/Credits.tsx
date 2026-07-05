@@ -1,11 +1,17 @@
 import styles from "./Credits.module.css";
 import { useLanguage } from "../../context/useLanguage";
 
+type RolKey =
+  | "development"
+  | "designArt"
+  | "script"
+  | "translations"
+  | "testers";
+
 interface GrupoCredito {
-  rol: string;
+  rol: RolKey;
   personas: string[];
 }
-
 interface MusicCredit {
   title: string;
   author: string;
@@ -18,7 +24,7 @@ const creditos: GrupoCredito[] = [
   { rol: "designArt", personas: ["Javier"] },
   { rol: "script", personas: ["David"] },
   { rol: "translations", personas: ["Aranzazu"] },
-  { rol: "Testers", personas: ["David", "Aranzazu", "Javier"] },
+  { rol: "testers", personas: ["David", "Aranzazu", "Javier"] },
 ];
 
 const musicCredits: MusicCredit[] = [
