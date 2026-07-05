@@ -1,4 +1,3 @@
-import styles from "./Info.module.css";
 import { useLanguage } from "../../context/useLanguage";
 
 export default function Info() {
