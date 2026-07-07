@@ -31,7 +31,7 @@ export default function HallOfFame() {
       let hasNext = true;
 
       while (hasNext) {
-        const res = await api.get(`api/v1/Jugadores/?page=${page}`);
+        const res = await api.get(`api/v1/Jugadores/`);
         const data = res.data;
 
         allPlayers = allPlayers.concat(data || []);
