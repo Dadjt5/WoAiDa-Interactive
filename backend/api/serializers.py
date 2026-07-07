@@ -19,7 +19,7 @@ class JugadorSerializer(serializers.ModelSerializer):
         fields = ['id', 'nombreUsuario', 'fechaDeExito']
 
     def validate_nombreUsuario(self, value):
-        if profanity.contains_profanity(value) or palabras_censuradas.contains(value):
+        if profanity.contains_profanity(value) or value in palabras_censuradas:
             raise serializers.ValidationError(
                 "El nombre de usuario contiene contenido no permitido."
             )
