@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow py-3">
       <div className="container-fluid px-4">
         <NavLink to="/" className="navbar-brand fw-bold fs-4" onClick={closeMenu}>
-          Game break
+          WoAiDa
         </NavLink>
 
         <button
