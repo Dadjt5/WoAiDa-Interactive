@@ -40,7 +40,7 @@ export default function Home() {
           <span className="badge bg-light text-dark mb-3 px-3 py-2 rounded-pill">
             🎮 {t.homeTitle}
           </span>
-          <h1 className="display-4 fw-bold mb-3">Game Break</h1>
+          <h1 className="display-4 fw-bold mb-3">WoAiDa Interactive</h1>
           <p className="lead mb-0 mx-auto" style={{ maxWidth: 600 }}>
             {t.homeExpl}
           </p>
@@ -50,7 +50,7 @@ export default function Home() {
       <div className="container">
         {/* EQUIPO */}
         <section className="text-center mb-5">
-          <h2 className="mb-4">El equipo</h2>
+          <h2 className="mb-4">{t.team}</h2>
           <p className="text-muted mb-4 mx-auto" style={{ maxWidth: 700 }}>
             {t.homeThanks}
           </p>
