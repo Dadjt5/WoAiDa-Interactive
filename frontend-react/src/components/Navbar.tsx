@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useLanguage } from "../context/useLanguage";
-import logo from "../assets/logo_wad.png";
+import logo from "../assets/logo_wad_4.png";
 import "./Navbar.css";
 
 export default function Navbar() {
