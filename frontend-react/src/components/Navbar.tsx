@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useLanguage } from "../context/useLanguage";
+import logo from "../assets/logo_wad.png";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -17,6 +18,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow py-3">
       <div className="container-fluid px-4">
         <NavLink to="/" className="navbar-brand fw-bold fs-4" onClick={closeMenu}>
+          <img src={logo} alt="WoAiDa logo" width="40" height="40" className="rounded-circle" />
           WoAiDa
         </NavLink>
 
