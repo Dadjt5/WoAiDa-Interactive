@@ -3,7 +3,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import Contacto from "./pages/Contact";
 import Legal from "./pages/Legal";
-import Privacidad from "./pages/Privacy";
+import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
 import TicTacRandom from "./games/TicTacRandom/TicTacRandom";
 import Info from "./games/TicTacRandom/Info";
@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "contacto", element: <Contacto /> },
       { path: "legal", element: <Legal /> },
-      { path: "privacidad", element: <Privacidad /> },
+      { path: "privacy", element: <Privacy /> },
       { path: "cookies", element: <Cookies /> },      
       {
         path: "TicTacRandom",
